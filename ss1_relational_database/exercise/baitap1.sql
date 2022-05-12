@@ -1,4 +1,5 @@
-use student_managenment;
+create database baitap1;
+use baitap1;
 create table class(
 id INT, 
 `name` VARCHAR(50)
