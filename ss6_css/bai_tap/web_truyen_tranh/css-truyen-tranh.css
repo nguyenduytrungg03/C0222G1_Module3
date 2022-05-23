@@ -1,0 +1,39 @@
+
+
+h1{
+    padding: 0px;
+    color: red;
+    text-align: center;
+}
+.container {
+    width: 100%;
+    height: 60px;
+}
+.menu{
+    width: 100%;
+    height: 30px;
+    background: orange;
+    justify-content: space-around;
+}
+.menu ul li {
+    position: relative;
+    display: inline;
+    margin: 0px 26px;
+    line-height: 30px;
+
+}
+li:hover{
+    font-size: 17px;
+    color: red;
+}
+.content {
+    background: antiquewhite;
+    list-style: none;
+}
+img{
+    width: 270px;
+    height: 200px;
+}
+a{
+    padding: 10px;
+}
