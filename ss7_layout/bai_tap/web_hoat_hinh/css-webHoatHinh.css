@@ -1,0 +1,50 @@
+.col-l-1 {width: 8.33333%;}
+.col-l-2 {width: 16.66667%;}
+.col-l-3 {width: 25%;}
+.col-l-4 {width: 33.33333%;}
+.col-l-5 {width: 41.66667%;}
+.col-l-6 {width: 50%;}
+.col-l-7 {width: 58.33333%;}
+.col-l-8 {width: 66.66667%;}
+.col-l-9 {width: 75%;}
+.col-l-10 {width: 83.33333%;}
+.col-l-11 {width: 91.66667%;}
+.col-l-12 {width: 100%;}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+.logo{
+    position: center;
+}
+.header{
+    background-color: coral;
+    border: solid;
+}
+.menu {
+    height: 50px;
+    width: 100%;
+    background-color: pink;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    border: solid ;
+}
+p:hover{
+    border: 1px;
+    color: dimgrey;
+}
+.hinh{
+    width: 100%;
+    height: 160px;
+    margin-bottom: 5px;
+}
+.main{
+    float: right;
+}
