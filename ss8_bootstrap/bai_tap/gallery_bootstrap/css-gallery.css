@@ -1,0 +1,12 @@
+div.desc{
+    padding: 15px;
+    text-align: center;
+
+}
+div.gallery{
+    border: 1px solid #80bdff;
+}
+.picture:hover {
+    color: #721c24;
+    border: 1px solid black;
+}
