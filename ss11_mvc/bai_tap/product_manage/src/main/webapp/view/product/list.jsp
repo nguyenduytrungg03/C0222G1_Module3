@@ -38,7 +38,7 @@
             <td>${product.price} </td>
             <td>${product.description} </td>
             <td>${product.producer} </td>
-            <td><a href="">Update</a></td>
+            <td><a href="/products?action=update&id=${product.id}">Update</a></td>
             <td><a href="">Delete</a></td>
         </tr>
     </c:forEach>

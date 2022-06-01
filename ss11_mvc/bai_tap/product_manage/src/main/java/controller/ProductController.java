@@ -25,10 +25,14 @@ public class ProductController extends javax.servlet.http.HttpServlet {
             case "display":
                 finById(request, response);
                 break;
+            case "update":
+                saveUpdate(request,response);
             default:
                 listProduct(request, response);
         }
     }
+
+
 
 
     ProductService productService = new ProductService();
@@ -45,6 +49,8 @@ public class ProductController extends javax.servlet.http.HttpServlet {
             case "display":
                 finById(request, response);
                 break;
+            case "update":
+                updateProduct(request,response);
             default:
                 listProduct(request, response);
         }
@@ -93,16 +99,47 @@ public class ProductController extends javax.servlet.http.HttpServlet {
     }
 
     private void finById(HttpServletRequest request, HttpServletResponse response) {
-        Integer id = Integer.parseInt(request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("id"));
         Product product = productService.findById(id);
         request.setAttribute("product", product);
         try {
-            request.getRequestDispatcher("view/product/display.jsp").forward(request,response);
+            request.getRequestDispatcher("view/product/detail.jsp").forward(request,response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+    private void updateProduct(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Product product = productService.findById(id);
+        request.setAttribute("product", product);
+        try {
+            request.getRequestDispatcher("view/product/update.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    private void saveUpdate(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        String name = request.getParameter("name");
+        double price = Double.parseDouble(request.getParameter("price"));
+        String description = request.getParameter("description");
+        String producer = request.getParameter("producer");
+        Product product = new Product(id, name, price, description, producer);
+        productService.update(product);
+        request.setAttribute("message", "Chỉnh sửa thành công");
+        try {
+            request.getRequestDispatcher("view/product/update.jsp").forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
 
